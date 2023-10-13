@@ -1,11 +1,11 @@
 <!--
  * @Author: 邱狮杰
  * @Date: 2023-03-09 11:53:37
- * @LastEditTime: 2023-10-12 14:27:36
+ * @LastEditTime: 2023-10-13 18:04:29
  * @Description: 
- * @FilePath: /baseRepo/README.md
+ * @FilePath: /buildingBlocks/buildingRepo/README.md
 -->
-# baseRepo
+# building repo
 
 # link 流程
 
