@@ -1,3 +1,0 @@
-interface CheckUserResponse {
-    assetsToken: string
-}

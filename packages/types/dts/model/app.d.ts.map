@@ -1,0 +1,1 @@
+{"version":3,"file":"app.d.ts","sourceRoot":"","sources":["../../src/model/app.ts"],"names":[],"mappings":"AAQA;;;;;;GAMG;AACH,MAAM,WAAW,QAAQ;IACrB;;;;OAIG;IACH,IAAI,EAAE,MAAM,CAAA;IACZ;;;;OAIG;IACH,IAAI,CAAC,EAAE,MAAM,CAAA;IACb;;;;;OAKG;IACH,IAAI,EAAE,MAAM,CAAA;IAEZ;;;;OAIG;IACH,QAAQ,EAAE,MAAM,CAAA;CACnB"}

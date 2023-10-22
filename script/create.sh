@@ -1,9 +1,9 @@
 ###
 # @Author: 邱狮杰
 # @Date: 2023-04-16 09:03:29
- # @LastEditTime: 2023-10-12 14:35:33
+ # @LastEditTime: 2023-10-21 21:45:09
 # @Description:
- # @FilePath: /baseRepo/script/create.sh
+ # @FilePath: /buildingBlocks/buildingRepo/script/create.sh
 ###
 
 mkdir etc
@@ -11,6 +11,9 @@ mkdir etc
 mkdir src
 
 touch src/index.ts
+
+touch REDEME.md
+
 
 # 初始化 package.json
 pnpm init
@@ -25,22 +28,22 @@ npm pkg set scripts.build:cjs='tsc --module commonjs --rootDir ./src --outDir ./
 npm pkg set scripts.build:es='tsc --module es6 --rootDir ./src --outDir ./dist --experimentalDecorators true'
 
 # 打包 commonjs 和 es 规范的代码
-npm pbk set scripts.build="pnpm build:cjs && pnpm build:es"
+npm pkg set scripts.build="pnpm build:cjs && pnpm build:es"
 
 # 打包 并 根据 API 生成文档
 npm pkg set scripts.build:md="pnpm build && api-extractor run --local --verbose && sh mv.sh"
 
 # 启动 vitest 只执行一次
-npm pbk set scripts.test="vitest run"
+npm pkg set scripts.test="vitest run"
 
 # 启动 vitest watch 模式
-npm pbk set scripts.test:watch="vitest"
+npm pkg set scripts.test:watch="vitest"
 
 # 启动 vitest 以 ui 模式运行
-npm pbk set scripts.test:ui="vitest --ui"
+npm pkg set scripts.test:ui="vitest --ui"
 
 # 将 包 link 到 pnpm store
-npm pbk set scripts.links="pnpm link --global"
+npm pkg set scripts.links="pnpm link --global"
 
 # 更新现在依赖
-npm pbk set scripts.updateDep=""
+npm pkg set scripts.updateDep=""

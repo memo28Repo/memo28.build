@@ -6,6 +6,10 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**", "dts", "lib"]
     },
+    "build:watch": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**", "dts", "lib"]
+    },
     "lint": {
       "outputs": []
     },

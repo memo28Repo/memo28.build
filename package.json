@@ -1,5 +1,5 @@
 {
-  "name": "baserepo",
+  "name": "memo28.build",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
@@ -10,6 +10,7 @@
     "prepare": "husky install",
     "updateDep": "turbo run updateDep --color",
     "build": "turbo run build --color",
+    "build:watch": "turbo run build:watch --color",
     "links": "turbo run links --color",
     "test": "turbo run test --color",
     "dev": "turbo run dev --parallel",
