@@ -2,7 +2,7 @@
  * @Author: 邱狮杰&qwm
  * @Date: 2023-09-30 19:20:21
  * @LastEditTime: 2023-10-22 16:53:59
- * @Description: 
+ * @Description:
  * @FilePath: /buildingRepo/packages/building/src/views/create/index.tsx
  */
 import Alert from '@mui/material/Alert';
@@ -23,7 +23,7 @@ import { AppCard } from './components/appCard/index.tsx';
  * 创建应用List界面
  *
  */
-export const Create: FC<unknown> = () => {
+const Create: FC<unknown> = () => {
     usePageBgColor()
     const addAppRef = useRef<addAppRef>()
     const breadcrumbsComponentList: breadcrumbsComponentProps['list'] = [{ name: 'memo28', disable: true }, { name: '应用列表', disable: true }]
@@ -67,3 +67,6 @@ export const Create: FC<unknown> = () => {
     </>
 
 }
+
+
+export default Create

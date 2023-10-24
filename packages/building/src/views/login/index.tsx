@@ -2,7 +2,7 @@
  * @Author: 邱狮杰&qwm
  * @Date: 2023-10-15 09:40:00
  * @LastEditTime: 2023-10-22 10:35:27
- * @Description: 
+ * @Description:
  * @FilePath: /buildingRepo/packages/building/src/views/login/index.tsx
  */
 import GoogleIcon from '@mui/icons-material/Google';
@@ -18,7 +18,7 @@ import start from '~/assets/svg/start.svg';
 import Verify from '~/assets/svg/verify.svg';
 import { useLoginStatus } from './hooks/useLogin';
 
-export const Login: FC<unknown> = () => {
+const Login: FC<unknown> = () => {
     const { login, rememberMe, setRememberMe, isPswHandler, isEmailHandler, isLoginDisable, setPsw, isPsw, isEmail, verifyShow, loginShow, pswShow, showPswHandler, showVerifyHandler, setEmail } = useLoginStatus()
 
 
@@ -84,3 +84,5 @@ export const Login: FC<unknown> = () => {
         </div>
     </div>
 }
+
+export default Login

@@ -10,6 +10,8 @@ export const routerMap = {
     },
     login: {
         index: '/login'
+    },
+    canvas: {
+        index: '/canvas'
     }
-
 }

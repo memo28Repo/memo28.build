@@ -2,22 +2,21 @@
  * @Author: 邱狮杰&qwm
  * @Date: 2023-10-15 10:43:55
  * @LastEditTime: 2023-10-22 10:32:52
- * @Description: 
+ * @Description:
  * @FilePath: /buildingRepo/packages/building/src/views/login/hooks/useLogin.ts
  */
 
 import { useNavigate } from '@tanstack/react-router'
 import { useEffect, useMemo, useState } from "react"
-import { useAppDispatch } from '~/hooks/store'
 import { useUserSlice } from '~/hooks/useUserSlice'
 import { routerMap } from '~/router/map'
 import { UserService } from '~/service/api/user/user'
 
 /**
- * 
+ *
  * 修改登录页 icon展示逻辑
- * 
- * @returns 
+ *
+ * @returns
  */
 export function useLoginIcon() {
     /**
@@ -69,7 +68,6 @@ export function useLoginStatus() {
     const { pswShow, verifyShow, loginShow, showPswHandler, showLoginHandler, showVerifyHandler } = useLoginIcon()
     const [email, setEmail] = useState('')
     const [psw, setPsw] = useState('')
-    const dispatch = useAppDispatch()
 
     const [rememberMe, setRememberMe] = useState(false)
 
@@ -160,7 +158,7 @@ export function useLoginStatus() {
     const user = useUserSlice()
     /**
      * 登录逻辑
-     * 
+     *
      * @public
      */
     async function login() {
@@ -172,8 +170,8 @@ export function useLoginStatus() {
             password: psw
         })
         user.setLoginProfile(result)
-        user.getUserInfo(result.userId)
-        nav()
+        await user.getUserInfo(result.userId)
+        await nav()
     }
 
     return { login, rememberMe, setRememberMe, isEmailHandler, isPswHandler, isLoginDisable, isPsw, psw, email, setPsw, setEmail, pswShow, verifyShow, loginShow, showPswHandler, showLoginHandler, showVerifyHandler, isEmail }
