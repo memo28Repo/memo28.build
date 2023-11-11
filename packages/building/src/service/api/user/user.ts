@@ -1,7 +1,7 @@
 /*
  * @Author: 邱狮杰&qwm
  * @Date: 2023-09-30 17:20:46
- * @LastEditTime: 2023-10-22 09:39:59
+ * @LastEditTime: 2023-11-01 20:21:22
  * @Description: 
  * @FilePath: /buildingRepo/packages/building/src/service/api/user/user.ts
  */
@@ -10,13 +10,13 @@ import { ConfigurationThrownToUser, controller, Get, Post } from '@memo28/servic
 import { Response } from "~/service";
 
 @controller("/user", {
-    apply: ['checkUser', 'Login', 'Register', 'ById']
+    apply: ['checkUser', 'Login', 'Register', 'ById','VisitorLogin']
 })
 export class UserService {
 
     @Post("/check")
-    async checkUser(configurationThrownToUser?: ConfigurationThrownToUser<Response<CheckUserResponse>>): Promise<CheckUserResponse> {
-        return configurationThrownToUser?.response.data as CheckUserResponse
+    async checkUser(configurationThrownToUser?: ConfigurationThrownToUser<Response<UserResponse.LoginResponse>>): Promise<UserResponse.LoginResponse> {
+        return configurationThrownToUser?.response.data as UserResponse.LoginResponse
     }
 
     @Get("/login")
@@ -30,7 +30,12 @@ export class UserService {
     }
 
     @Get("/register")
-    async Register(_opt?: Partial<userModel>, configurationThrownToUser?: ConfigurationThrownToUser<Response<CheckUserResponse>>): Promise<CheckUserResponse> {
-        return configurationThrownToUser?.response.data as CheckUserResponse
+    async Register(_opt?: Partial<userModel>, configurationThrownToUser?: ConfigurationThrownToUser<Response<UserResponse.LoginResponse>>): Promise<UserResponse.LoginResponse> {
+        return configurationThrownToUser?.response.data as UserResponse.LoginResponse
+    }
+
+    @Get("/visitorLogin")
+    async VisitorLogin(configurationThrownToUser?: ConfigurationThrownToUser<Response<UserResponse.LoginResponse>>): Promise<UserResponse.LoginResponse> {
+        return configurationThrownToUser?.response.data as UserResponse.LoginResponse
     }
 }

@@ -1,13 +1,13 @@
 /*
  * @Author: 邱狮杰&qwm
  * @Date: 2023-10-15 09:40:00
- * @LastEditTime: 2023-10-22 10:35:27
+ * @LastEditTime: 2023-11-01 20:20:46
  * @Description:
  * @FilePath: /buildingRepo/packages/building/src/views/login/index.tsx
  */
 import GoogleIcon from '@mui/icons-material/Google';
 import LoginIcon from '@mui/icons-material/Login';
-import Button from '@mui/material/Button';
+import TourIcon from '@mui/icons-material/Tour';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import TextField from '@mui/material/TextField';
@@ -16,10 +16,11 @@ import ForgetPsw from '~/assets/svg/forgetPsw.svg';
 import loginBkg from '~/assets/svg/login.svg';
 import start from '~/assets/svg/start.svg';
 import Verify from '~/assets/svg/verify.svg';
+import Btn from '~/components/button/button';
 import { useLoginStatus } from './hooks/useLogin';
 
 const Login: FC<unknown> = () => {
-    const { login, rememberMe, setRememberMe, isPswHandler, isEmailHandler, isLoginDisable, setPsw, isPsw, isEmail, verifyShow, loginShow, pswShow, showPswHandler, showVerifyHandler, setEmail } = useLoginStatus()
+    const { visitorLogin, visitorLoginLoading, login, rememberMe, setRememberMe, isPswHandler, isEmailHandler, isLoginDisable, setPsw, isPsw, isEmail, verifyShow, loginShow, pswShow, showPswHandler, showVerifyHandler, setEmail } = useLoginStatus()
 
 
 
@@ -65,9 +66,11 @@ const Login: FC<unknown> = () => {
             <br />
             <br />
             <br />
-            <Button className='w-72 ' onClick={login} startIcon={<LoginIcon />} disabled={!isLoginDisable} variant="contained" size="medium">登录</Button>
+            <Btn className='w-72 ' onClick={login} startIcon={<LoginIcon />} disabled={!isLoginDisable} variant="contained" size="large">登录</Btn>
             <br />
-            <Button className='w-72 ' startIcon={<GoogleIcon />} variant="contained" size="medium">谷歌登录</Button>
+            <Btn className='w-72 ' startIcon={<GoogleIcon />} variant="contained" size="large">谷歌登录</Btn>
+            <br />
+            <Btn onClick={visitorLogin} loading={visitorLoginLoading} className='w-72 ' startIcon={<TourIcon />} variant="contained" size="large">游客登录</Btn>
             <br />
 
             <div className='self-start ml-9'>

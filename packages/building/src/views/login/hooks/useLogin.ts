@@ -1,7 +1,7 @@
 /*
  * @Author: 邱狮杰&qwm
  * @Date: 2023-10-15 10:43:55
- * @LastEditTime: 2023-10-22 10:32:52
+ * @LastEditTime: 2023-11-01 20:22:06
  * @Description:
  * @FilePath: /buildingRepo/packages/building/src/views/login/hooks/useLogin.ts
  */
@@ -68,6 +68,7 @@ export function useLoginStatus() {
     const { pswShow, verifyShow, loginShow, showPswHandler, showLoginHandler, showVerifyHandler } = useLoginIcon()
     const [email, setEmail] = useState('')
     const [psw, setPsw] = useState('')
+    const [visitorLoginLoading, setVisitorLoginLoading] = useState(false)
 
     const [rememberMe, setRememberMe] = useState(false)
 
@@ -174,5 +175,16 @@ export function useLoginStatus() {
         await nav()
     }
 
-    return { login, rememberMe, setRememberMe, isEmailHandler, isPswHandler, isLoginDisable, isPsw, psw, email, setPsw, setEmail, pswShow, verifyShow, loginShow, showPswHandler, showLoginHandler, showVerifyHandler, isEmail }
+    // 游客登录
+    async function visitorLogin() {
+        setVisitorLoginLoading(true);
+        const userService = new UserService()
+        const resutl = await userService.VisitorLogin()
+        user.setLoginProfile(resutl)
+        await user.getUserInfo(resutl.userId)
+        await nav()
+        setVisitorLoginLoading(false);
+    }
+
+    return { visitorLogin, visitorLoginLoading, setVisitorLoginLoading, login, rememberMe, setRememberMe, isEmailHandler, isPswHandler, isLoginDisable, isPsw, psw, email, setPsw, setEmail, pswShow, verifyShow, loginShow, showPswHandler, showLoginHandler, showVerifyHandler, isEmail }
 }

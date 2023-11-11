@@ -19,7 +19,6 @@
     "@memo28/service": "^4.1.0",
     "@memo28/servicehelper": "^1.1.3",
     "@memo28/types": "^1.1.3",
-    "@memo28/utils": "^1.2.1",
     "@memo28/vitebuild": "^3.0.2",
     "@mui/icons-material": "^5.14.11",
     "@mui/material": "^5.14.11",
