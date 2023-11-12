@@ -11,33 +11,6 @@ import { CreateAction, CreateCase, CreateSlice } from '@memo28/enhance-redux/src
 import { isObjectEmpty } from '@memo28/utils'
 import { UserProfileType } from './userType.ts'
 
-// export const userSlice = createSlice({
-//     name: 'user',
-//     initialState: {
-//         loginProfile: {
-//             assetsToken: '',
-//             userId: undefined
-//         },
-//         userInfo: {
-//             email: '',
-//             password: '',
-//             username: '',
-//             userType: ''
-//         }
-//     } as UserProfileType,
-//     reducers: {
-//         setLoginProfile(state, payload: { payload: Partial<UserResponse.LoginResponse>, type: string }) {
-//             state.loginProfile = payload.payload
-//             localStorage.setItem(token, payload.payload.assetsToken || '')
-//             localStorage.setItem(userId, payload.payload.userId?.toString() || '')
-//         },
-//         setUserInfo(state, payload: { payload: Partial<userModel>, type: string }) {
-//             state.userInfo = payload.payload
-//             localStorage.setItem(userId, payload.payload.ID?.toString() || '')
-//         }
-//     }
-// })
-
 
 export const userActions = new CreateAction()
     .addAction<{ data: Partial<UserResponse.LoginResponse> }, "setLoginProfile">("setLoginProfile")
