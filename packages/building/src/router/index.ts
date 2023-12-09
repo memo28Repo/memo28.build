@@ -1,7 +1,7 @@
 /*
  * @Author: 邱狮杰&qwm
  * @Date: 2023-09-30 14:36:17
- * @LastEditTime: 2023-10-22 15:46:42
+ * @LastEditTime: 2023-11-19 10:09:14
  * @Description:
  * @FilePath: /buildingRepo/packages/building/src/router/index.ts
  */
@@ -11,27 +11,15 @@ import {
     Router,
     lazyRouteComponent
 } from '@tanstack/react-router'
-import {routerMap} from "~/router/map.ts"
-import {Edit} from '~/views/edit/index.tsx'
+import { routerMap } from "~/router/map.ts"
+import { Edit } from '~/views/edit/index.tsx'
 import App from '../App.tsx'
+import { CanvasRoute } from './canvas.ts'
 
-interface routerMeta {
+export interface routerMeta {
     title: string
 }
 
-const CanvasRoute = new Route({
-    getParentRoute() {
-        return rootRoute
-    },
-    path: routerMap.canvas.index,
-    component: lazyRouteComponent(() => import('~/views/canvas/index')),
-    meta: {
-        title: 'canvas'
-    } as routerMeta,
-    loader() {
-        document.title = '画布'
-    }
-})
 
 const LoginRoute = new Route({
     getParentRoute() {
@@ -86,9 +74,11 @@ const CreateRoute = new Route({
     } as routerMeta,
 })
 
-const rootRoute = new RootRoute({
+export const rootRoute = new RootRoute({
     component: App
 });
+
+
 
 const routerTree = rootRoute.addChildren([
     IndexRoute,
@@ -98,7 +88,7 @@ const routerTree = rootRoute.addChildren([
     CanvasRoute
 ])
 
-export const router = new Router({routeTree: routerTree})
+export const router = new Router({ routeTree: routerTree })
 
 
 

@@ -1,7 +1,7 @@
 /*
  * @Author: 邱狮杰&qwm
  * @Date: 2023-09-30 17:23:25
- * @LastEditTime: 2023-11-11 10:59:47
+ * @LastEditTime: 2023-11-19 10:23:56
  * @Description:
  * @FilePath: /buildingRepo/packages/building/src/store/user/user.ts
  */
@@ -17,7 +17,7 @@ export const userActions = new CreateAction()
     .addAction<{ data: Partial<userModel> }, "setUserInfo">('setUserInfo')
 
 export const userCase = new CreateCase<typeof userActions, UserProfileType>()
-    .addCase("setLoginProfile", function (state, action) {
+    .addCase('setLoginProfile', function (state, action) {
         if (isObjectEmpty(action.payload.data)) return
         state.loginProfile = action.payload.data
         localStorage.setItem(token, action.payload.data.assetsToken || '')

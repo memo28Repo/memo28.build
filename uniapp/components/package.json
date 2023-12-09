@@ -1,0 +1,22 @@
+{
+  "name": "@memo28.build/unicomponents",
+  "version": "1.0.0",
+  "description": "uniapp components",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run",
+    "build:cjs": "tsc --module commonjs --rootDir ./src --outDir ./lib --experimentalDecorators true",
+    "build:es": "tsc --module es6 --rootDir ./src --outDir ./dist --experimentalDecorators true",
+    "build": "pnpm build:cjs && pnpm build:es",
+    "build:md": "pnpm build && api-extractor run --local --verbose && sh mv.sh",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "links": "pnpm link --global"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vue": "^3.3.11"
+  }
+}

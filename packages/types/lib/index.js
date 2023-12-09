@@ -2,7 +2,7 @@
 /*
  * @Author: 邱狮杰&qwm
  * @Date: 2023-10-13 18:13:40
- * @LastEditTime: 2023-11-01 10:50:03
+ * @LastEditTime: 2023-11-12 14:53:46
  * @Description:
  * @FilePath: /buildingRepo/packages/types/src/index.ts
  */
@@ -23,6 +23,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./api/app"), exports);
 __exportStar(require("./api/user"), exports);
+__exportStar(require("./function/functionalGroups"), exports);
 __exportStar(require("./model/app"), exports);
 __exportStar(require("./model/canvas"), exports);
 __exportStar(require("./model/user"), exports);

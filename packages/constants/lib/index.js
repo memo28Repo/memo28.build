@@ -2,7 +2,7 @@
 /*
  * @Author: 邱狮杰&qwm
  * @Date: 2023-10-21 21:45:16
- * @LastEditTime: 2023-11-01 20:43:56
+ * @LastEditTime: 2023-11-12 15:03:06
  * @Description:
  * @FilePath: /buildingRepo/packages/constants/src/index.ts
  */
@@ -25,4 +25,5 @@ exports.CONSTANT = void 0;
 __exportStar(require("./enum/code"), exports);
 var constant_1 = require("./enum/constant");
 Object.defineProperty(exports, "CONSTANT", { enumerable: true, get: function () { return constant_1.CONSTANT; } });
+__exportStar(require("./enum/user"), exports);
 __exportStar(require("./local/auth"), exports);
