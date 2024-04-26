@@ -1,0 +1,9 @@
+###
+# @Author: 邱狮杰
+# @Date: 2023-04-16 09:02:35
+# @LastEditTime: 2023-04-16 09:22:38
+# @Description:
+# @FilePath: /baseRepo/.husky/pre-commit
+###
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"

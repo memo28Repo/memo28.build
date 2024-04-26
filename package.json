@@ -1,0 +1,42 @@
+{
+  "name": "baserepo",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build:api": "pnpm build && api-extractor run --local --verbose",
+    "prepare": "husky install",
+    "updateDep": "turbo run updateDep --color",
+    "build": "turbo run build --color",
+    "links": "turbo run links --color",
+    "test": "turbo run test --color",
+    "dev": "turbo run dev --parallel",
+    "rmDeps": "turbo run rmDeps --parallel",
+    "lint": "turbo run lint --color",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "cz": "git add . && pnpm cz-customizable",
+    "ci:publish": "pnpm publish -r",
+    "build:md": "turbo run build:md --color && api-documenter markdown"
+  },
+  "devDependencies": {
+    "@vitest/ui": "^0.27.2",
+    "husky": "^8.0.0",
+    "jsdom": "^21.0.0",
+    "prettier": "latest",
+    "turbo": "latest",
+    "vitest": "^0.26.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.26.0",
+    "@commitlint/config-conventional": "^17.6.1",
+    "@microsoft/api-extractor": "^7.34.4",
+    "cz-customizable": "^7.0.0",
+    "reflect-metadata": "^0.1.13"
+  },
+  "packageManager": "pnpm@9.0.6"
+}
